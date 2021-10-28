@@ -6,7 +6,7 @@ This web app allows a user to explore and visualize census data
 ## Dependencies
 `Python` `NumPy` `Pandas` `Seaborn` `Matplotlib` `Streamlit` 
 
-## Install dependencies
+## Install Dependencies
 ### Python
 <a href="https://www.python.org/downloads/" target="_blank">Download Python</a>
     
