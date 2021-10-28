@@ -25,6 +25,9 @@ pages = {
     "About": about
 }
 
+# Create sidebar
+st.sidebar.title("Navigation")
+
 # Create radio to select the page
 page = st.sidebar.radio("Pages", list(pages.keys()))
 
