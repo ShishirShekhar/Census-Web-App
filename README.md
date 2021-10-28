@@ -1,6 +1,6 @@
 # Census-Web-App
 
-## Intro
+## 📃 Intro
 This web app allows a user to explore and visualize census data
 
 
