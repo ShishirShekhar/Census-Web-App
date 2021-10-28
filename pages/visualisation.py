@@ -18,33 +18,26 @@ def app(df):
     for plots in plot_list:
         if (plots == "Pie Plot"):
             st.subheader(plots)
-            st.subheader("Distribution for Income groups")
+            pie_col = st.multiselect("Select column", ["income", "gender"])
 
-            x1 = df["income"].value_counts()
-            labels1 = x1.index
-            fig1 = plt.figure(figsize=(12, 5))
-            plt.pie(x=x1, labels=labels1, explode=[0, 0.2])
-            st.pyplot(fig1)
+            for col in pie_col:
+                st.subheader(f"Distribution for {col}")
 
-            st.subheader("Distribution for Gender")
-
-            x2 = df["gender"].value_counts()
-            labels2 = x2.index
-            fig2 = plt.figure(figsize=(12, 5))
-            plt.pie(x=x2, labels=labels2, explode=[0, 0.2])
-            st.pyplot(fig2)
+                x = df[col].value_counts()
+                labels = x.index
+                fig = plt.figure(figsize=(12, 5))
+                plt.pie(x=x, labels=labels, explode=[0, 0.2], autopct='%.1f%%')
+                st.pyplot(fig)
 
         if (plots == "Box Plot"):
             st.subheader(plots)
+            box_col = st.multiselect("Select hours-per-week vs column", ["income", "gender"])
+            
             st.subheader("Box Plot for hours-per-week")
-
-            fig1 = plt.figure(figsize=(12, 5))
-            sns.boxplot(x="hours-per-week", y="gender", data=df)
-            st.pyplot(fig1)
-
-            fig2 = plt.figure(figsize=(12, 5))
-            sns.boxplot(x="hours-per-week", y="income", data=df)
-            st.pyplot(fig2)
+            for col in box_col:
+                fig = plt.figure(figsize=(12, 5))
+                sns.boxplot(x="hours-per-week", y="gender", data=df)
+                st.pyplot(fig)
 
         if (plots == "Count Plot"):
             st.subheader(plots)
