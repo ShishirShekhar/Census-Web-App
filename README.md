@@ -1,5 +1,6 @@
 # Census-Web-App
 
+
 ## 📃 Intro
 This web app allows a user to explore and visualize census data
 
@@ -10,14 +11,14 @@ This web app allows a user to explore and visualize census data
 
 ## 👩‍💻 Install Dependencies
 
-### 1. Python
+1. Python
 <a href="https://www.python.org/downloads/" target="_blank">Download Python</a>
     
  
-### 2. Other Dependencies
+2. Other Dependencies
 
-NOTE: you should be on the same dir as requirements.txt file 
-> pip install -r requirements.txt
+    NOTE: you should be on the same dir as requirements.txt file 
+    > pip install -r requirements.txt
 
 
 ## 🏃‍♂️ Run app
