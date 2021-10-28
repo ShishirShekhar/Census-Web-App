@@ -1,9 +1,19 @@
+"""This module creates the visulisation page"""
+
 # Import necessary modules
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def visualize(df, plot_list):
+
+def app(df):
+    """This function creates the visulisation page"""
+    # Add a subheader in the sidebar with the label "Visualisation Selector"
+    st.header("Visualization Selector")
+
+    # Add a multiselect widget to allow the user to select multiple visualisations.
+    plot_list = st.multiselect("Select the Charts/Plots:", ["Pie Plot", "Box Plot", "Count Plot"])
+
     # Using the 'if' statement, display raw data on the click of the checkbox.
     for plots in plot_list:
         if (plots == "Pie Plot"):
@@ -43,33 +53,3 @@ def visualize(df, plot_list):
             fig = plt.figure(figsize=(12, 5))
             sns.countplot(df["workclass"])
             st.pyplot(fig)
-
-
-def view_data(df):
-    # Add an expander and display the dataset as a static table within the expander.
-    with st.expander("View Dataset"):
-        st.dataframe(df)
-
-    # Create three olumns.
-    st.subheader("Columns Description:")
-    cols = st.columns([1, 1, 1])
-
-    # Add a checkbox in the first column. Display the column names of 'census_df' on the click of checkbox.
-    with cols[0]:
-        if st.checkbox("Show all columns names"):
-            st.dataframe(df.columns)
-
-    # Add a checkbox in the second column. Display the column data-types of 'census_df' on the click of checkbox.
-    with cols[1]:
-        if st.checkbox("View columns data-types"):
-            st.dataframe(df.dtypes.apply(lambda x: x.name))
-
-    # Add a checkbox in the third column followed by a selectbox which accepts the column name whose data needs to be displayed.
-    with cols[2]:
-        if st.checkbox("View columns data"):
-            col = st.selectbox("Select column", list(df.columns))
-            st.dataframe(df[col])
-
-    # Display summary of the dataset on the click of checkbox.
-    if st.checkbox("Show summary"):
-        st.dataframe(df.describe())
