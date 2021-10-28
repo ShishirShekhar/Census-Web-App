@@ -8,8 +8,7 @@ This web app allows a user to explore and visualize census data
 
 ## Install dependencies
 ### Python
-
-    <a href="https://www.python.org/downloads/" target="_blank">Download Python</a>
+<a href="https://www.python.org/downloads/" target="_blank">Download Python</a>
     
 ### Other Dependencies
 
