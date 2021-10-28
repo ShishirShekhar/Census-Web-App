@@ -3,18 +3,26 @@
 ## Intro
 This web app allows a user to explore and visualize census data
 
+
 ## Dependencies
 `Python` `NumPy` `Pandas` `Seaborn` `Matplotlib` `Streamlit` 
+
 
 ## Install Dependencies
 ### Python
 <a href="https://www.python.org/downloads/" target="_blank">Download Python</a>
     
+ 
 ### Other Dependencies
 
+NOTE: you should be on the same dir as requirements.txt file 
+> pip install -r requirements.txt
 
-  NOTE: you should be on the same dir as requirements.txt file 
-  > pip install -r requirements.txt
+
+## Run app
+
+NOTE: you should be on the same dir as main.py file
+> streamlit run main.py
 
 
 ## Images
